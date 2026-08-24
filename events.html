@@ -16,7 +16,7 @@
 <header class="site-header">
   <nav class="nav" aria-label="Primary">
     <a class="nav-brand" href="index.html">
-      <img src="assets/brand/flower.png" alt="oSTEM at OU flower mark" width="40" height="40">
+      <img src="assets/brand/flower.png" alt="oSTEM at OU flower mark" width="34" height="34">
       oSTEM @ OU
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
@@ -28,7 +28,6 @@
       <a href="team.html">Team</a>
       <a href="events.html" aria-current="page">Events</a>
       <a href="join.html">Join</a>
-      <a href="brand.html">Brand</a>
     </div>
   </nav>
 </header>
@@ -48,8 +47,9 @@
   <section class="section-tight">
     <div class="wrap">
       <h2>Upcoming</h2>
-      <div class="grid grid-3">
-        <!-- TODO: replace with real upcoming events -->
+      <div class="grid grid-3" id="upcoming-events">
+        <!-- Placeholder cards below are also the offline fallback —
+             see assets/data/sheet-config.js to pull real data instead. -->
         <article class="event-card">
           <span class="event-date">Thu · Sep 4</span>
           <h3>Queer Coffee &amp; Code</h3>
@@ -75,11 +75,12 @@
     </div>
   </section>
 
-  <section class="section-tight">
+  <section class="section-tight section-tint">
     <div class="wrap">
       <h2>Past</h2>
-      <div class="grid grid-3">
-        <!-- TODO: replace with real past events / recaps -->
+      <div class="grid grid-3" id="past-events">
+        <!-- Placeholder cards below are also the offline fallback —
+             see assets/data/sheet-config.js to pull real data instead. -->
         <article class="event-card is-past">
           <span class="event-date">Thu · Apr 17</span>
           <h3>Finals Szn, But Make It Gay</h3>
@@ -113,7 +114,7 @@
     <div class="org-name">oSTEM @ OU</div>
     <p class="tagline">Bring your whole self to STEM.</p>
     <div class="footer-meta">
-      <a href="https://instagram.com/ostem_ou" target="_blank" rel="noopener">@ostem_ou</a>
+      <a href="https://www.instagram.com/ostemok/" target="_blank" rel="noopener">@ostemok</a>
       <a href="mailto:ostem@ou.edu">ostem@ou.edu</a>
       <span>University of Oklahoma</span>
     </div>
@@ -121,5 +122,7 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/data/sheet-config.js"></script>
+<script src="assets/js/sheets.js"></script>
 </body>
 </html>

@@ -24,14 +24,16 @@ The `.nojekyll` file at the repo root tells GitHub Pages to skip Jekyll processi
 /team.html            Executive board + faculty advisor
 /events.html          Upcoming and past events
 /join.html            How to get involved
-/brand.html           Links to brand assets and guidelines
 
 /assets/css/styles.css   The one stylesheet every page shares
 /assets/js/main.js       Mobile nav toggle + sticky header scroll effect
+/assets/js/sheets.js     Pulls team/event data from Google Sheets (see below) — don't edit
+/assets/data/sheet-config.js   The ONE file officers edit to point at their Sheet
 /assets/brand/           Logo files: flower.png, lockup-horizontal.svg, lockup-stacked.svg
 /assets/images/          Photos and other page imagery
+/assets/images/team/     Officer/advisor headshots, referenced by filename from the Sheet
 
-/docs/                Constitution and the brand guidelines PDF
+/docs/                Constitution and other reference documents
 
 /.nojekyll            Tells GitHub Pages not to run Jekyll
 ```
@@ -50,6 +52,44 @@ You do **not** need to know how to code to keep this site current. Everything is
   ```
 
 - **Adding a new page:** copy an existing page (like `about.html`) as a starting point so you keep the same header nav and footer, then replace the `<main>` content. Add a link to it in the `.nav-links` block on every page, including the new one.
-- **The brand guidelines PDF** referenced from `brand.html` should live at `/docs/oSTEM-OU-brand-guidelines.pdf` — export the guidelines doc to PDF and drop it in `/docs/` under that exact filename, or update the link in `brand.html` to match whatever filename you use.
 
-When in doubt, keep it warm, keep it Poppins-and-Inter, and keep Cream and Crimson doing most of the work — see `brand.html` and the full guidelines for the reasoning behind all of it.
+### Updating the team and events pages without touching any code
+
+The Team and Events pages (and the "Upcoming events" preview on Home) can pull live from a **Google Sheet** instead of the hardcoded placeholder cards — so a future officer only ever edits a spreadsheet, never HTML.
+
+1. Make a Google Sheet with two tabs, **Team** and **Events**, using these exact column headers in row 1 (order doesn't matter, extra columns are ignored):
+
+   **Team tab:**
+
+   | Column | Notes |
+   | --- | --- |
+   | `type` | `officer` or `advisor`. Leave blank to default to `officer`. |
+   | `name` | Full name. |
+   | `role` | e.g. `President`, `Faculty Advisor`. |
+   | `pronouns` | e.g. `she/her`. Leave blank for "choose not to share." |
+   | `bio` | One or two sentences. |
+   | `photo` | Filename only (e.g. `jordan.jpg`) — upload the actual image to `/assets/images/team/` in the repo. Leave blank to show colored initials instead. |
+   | `linkedin` | Full profile URL. Leave blank to hide the icon. |
+   | `email` | Leave blank to hide the icon. |
+   | `petal` | Optional: `red`, `orange`, `yellow`, `green`, `blue`, or `purple`. Leave blank to auto-assign in order. |
+   | `department` | Advisor rows only — shown next to their role. |
+
+   **Events tab:**
+
+   | Column | Notes |
+   | --- | --- |
+   | `date` | ISO format `YYYY-MM-DD` (e.g. `2026-09-04`). Required — this is what sorts an event into Upcoming or Past automatically. |
+   | `time` | Free text, e.g. `6:00 PM`. |
+   | `title` | Event name. |
+   | `location` | Room/building. |
+   | `description` | One or two sentences. |
+   | `link_url` | Optional — RSVP link, calendar link, or recap link. Leave blank to hide the button. |
+   | `link_label` | Optional button text. Defaults to "Learn more" (upcoming) or "See recap" (past). |
+
+2. For each tab: **File → Share → Publish to web** → select that sheet/tab → format **Comma-separated values (.csv)** → **Publish**. Copy the URL it gives you.
+3. Open [assets/data/sheet-config.js](assets/data/sheet-config.js) and paste the two URLs in — that's the only file you need to edit, ever, for routine updates.
+4. Push to `main`. The live site now reads from the Sheet on every page load — edit a cell, refresh the page, see the change. No commit needed for content changes, only for the one-time URL setup.
+
+If a URL is left blank, or the Sheet is unreachable, the page quietly falls back to the placeholder cards already written into the HTML — nothing breaks, and that placeholder content also serves as a working example of the expected shape.
+
+When in doubt, keep it warm, keep it Poppins-and-Inter, and keep white space and restraint doing most of the work — crimson and the spectrum colors are accents, not backgrounds.

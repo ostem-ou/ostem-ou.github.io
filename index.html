@@ -16,7 +16,7 @@
 <header class="site-header">
   <nav class="nav" aria-label="Primary">
     <a class="nav-brand" href="index.html">
-      <img src="assets/brand/flower.png" alt="oSTEM at OU flower mark" width="40" height="40">
+      <img src="assets/brand/flower.png" alt="oSTEM at OU flower mark" width="34" height="34">
       oSTEM @ OU
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
@@ -28,7 +28,6 @@
       <a href="team.html">Team</a>
       <a href="events.html">Events</a>
       <a href="join.html">Join</a>
-      <a href="brand.html">Brand</a>
     </div>
   </nav>
 </header>
@@ -37,7 +36,7 @@
 
   <section class="hero">
     <div class="wrap">
-      <img class="hero-flower" src="assets/brand/flower.png" alt="The oSTEM flower mark: six rainbow petals radiating from a golden center" width="180" height="180">
+      <img class="hero-flower" src="assets/brand/flower.png" alt="The oSTEM flower mark: six rainbow petals radiating from a golden center" width="120" height="120">
       <span class="eyebrow">University of Oklahoma</span>
       <h1>oSTEM @ OU</h1>
       <p class="tagline">Bring your whole self to STEM.</p>
@@ -74,14 +73,15 @@
     </div>
   </section>
 
-  <section>
+  <section class="section-tint">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Happening soon</span>
         <h2>Upcoming events</h2>
       </div>
-      <div class="grid grid-3">
-        <!-- TODO: replace placeholder events with real dates/locations -->
+      <div class="grid grid-3" id="home-upcoming-events">
+        <!-- Placeholder cards below are also the offline fallback —
+             see assets/data/sheet-config.js to pull real data instead. -->
         <article class="event-card">
           <span class="event-date">Thu · Sep 4</span>
           <h3>Queer Coffee &amp; Code</h3>
@@ -105,17 +105,12 @@
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <div class="grid grid-2" style="align-items:center">
-        <div>
-          <span class="eyebrow">Who we are</span>
-          <h2>A chapter of oSTEM Inc, built for OU</h2>
-          <p>We're the local chapter of a national organization for LGBTQ+ folks in science, technology, engineering, and math — and we're built around one idea: the best science happens when no one has to hide.</p>
-          <p><a class="btn btn-secondary" href="about.html">Meet the mission</a></p>
-        </div>
-        <div class="spectrum-bar" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-      </div>
+  <section class="section-tight">
+    <div class="wrap text-center" style="max-width:620px">
+      <span class="eyebrow">Who we are</span>
+      <h2>A chapter of oSTEM Inc, built for OU</h2>
+      <p>We're the local chapter of a national organization for LGBTQ+ folks in science, technology, engineering, and math — and we're built around one idea: the best science happens when no one has to hide.</p>
+      <p style="margin-top:20px"><a class="btn btn-secondary" href="about.html">Meet the mission</a></p>
     </div>
   </section>
 
@@ -127,7 +122,7 @@
     <div class="org-name">oSTEM @ OU</div>
     <p class="tagline">Bring your whole self to STEM.</p>
     <div class="footer-meta">
-      <a href="https://instagram.com/ostem_ou" target="_blank" rel="noopener">@ostem_ou</a>
+      <a href="https://www.instagram.com/ostemok/" target="_blank" rel="noopener">@ostemok</a>
       <a href="mailto:ostem@ou.edu">ostem@ou.edu</a>
       <span>University of Oklahoma</span>
     </div>
@@ -135,5 +130,7 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/data/sheet-config.js"></script>
+<script src="assets/js/sheets.js"></script>
 </body>
 </html>

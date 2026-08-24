@@ -5,7 +5,18 @@
       "Read(//tmp/**)",
       "Read(//private/tmp/**)",
       "Bash(python3 -c ' *)",
-      "Bash(tidy -version)"
+      "Bash(tidy -version)",
+      "Bash(python3 -c \"import playwright\")",
+      "Bash(npm ls *)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(npx --yes playwright install chromium --with-deps)",
+      "Bash(node shots.js)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(node shot2.js)",
+      "Bash(lsof -ti:8934 -sTCP:LISTEN)",
+      "Bash(xargs -r kill)",
+      "Bash(python3 -c \"print\\(open\\('assets/css/styles.css'\\).read\\(\\).count\\('{'\\), open\\('assets/css/styles.css'\\).read\\(\\).count\\('}'\\)\\)\")"
     ]
   }
 }

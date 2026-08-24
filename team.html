@@ -16,7 +16,7 @@
 <header class="site-header">
   <nav class="nav" aria-label="Primary">
     <a class="nav-brand" href="index.html">
-      <img src="assets/brand/flower.png" alt="oSTEM at OU flower mark" width="40" height="40">
+      <img src="assets/brand/flower.png" alt="oSTEM at OU flower mark" width="34" height="34">
       oSTEM @ OU
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
@@ -28,7 +28,6 @@
       <a href="team.html" aria-current="page">Team</a>
       <a href="events.html">Events</a>
       <a href="join.html">Join</a>
-      <a href="brand.html">Brand</a>
     </div>
   </nav>
 </header>
@@ -47,8 +46,9 @@
 
   <section class="section-tight">
     <div class="wrap">
-      <div class="grid grid-3">
-        <!-- TODO: swap in real officer names, pronouns, bios, and links -->
+      <div class="grid grid-3" id="officer-grid">
+        <!-- Placeholder cards below are also the offline fallback —
+             see assets/data/sheet-config.js to pull real data instead. -->
         <article class="officer-card petal-left-red">
           <div class="name">Name Placeholder</div>
           <div class="role">President</div>
@@ -142,19 +142,22 @@
     </div>
   </section>
 
-  <section class="section-tight">
+  <section class="section-tight section-tint">
     <div class="wrap">
       <div class="section-head align-left">
         <span class="eyebrow">Faculty Advisor</span>
         <h2>Our advisor</h2>
       </div>
-      <!-- TODO: swap in real faculty advisor name, department, and bio -->
-      <div class="advisor-card">
-        <div class="avatar" aria-hidden="true"></div>
-        <div>
-          <div class="name" style="font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:var(--ink)">Name Placeholder</div>
-          <div class="role" style="color:var(--crimson);font-weight:600;margin-bottom:10px">Faculty Advisor · Department Placeholder</div>
-          <p>Bio coming soon — a faculty member from OU who backs this chapter and helps us navigate the university side of things.</p>
+      <!-- Placeholder card below is also the offline fallback —
+           see assets/data/sheet-config.js to pull real data instead. -->
+      <div id="advisor-slot">
+        <div class="advisor-card">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <div class="name" style="font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:var(--ink)">Name Placeholder</div>
+            <div class="role" style="color:var(--crimson);font-weight:600;margin-bottom:10px">Faculty Advisor · Department Placeholder</div>
+            <p>Bio coming soon — a faculty member from OU who backs this chapter and helps us navigate the university side of things.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -168,7 +171,7 @@
     <div class="org-name">oSTEM @ OU</div>
     <p class="tagline">Bring your whole self to STEM.</p>
     <div class="footer-meta">
-      <a href="https://instagram.com/ostem_ou" target="_blank" rel="noopener">@ostem_ou</a>
+      <a href="https://www.instagram.com/ostemok/" target="_blank" rel="noopener">@ostemok</a>
       <a href="mailto:ostem@ou.edu">ostem@ou.edu</a>
       <span>University of Oklahoma</span>
     </div>
@@ -176,5 +179,7 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/data/sheet-config.js"></script>
+<script src="assets/js/sheets.js"></script>
 </body>
 </html>
