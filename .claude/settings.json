@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk '{ print length, NR }' assets/images/oSTEM-OU-brand-guidelines.html)",
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Bash(python3 -c ' *)",
+      "Bash(tidy -version)"
+    ]
+  }
+}
